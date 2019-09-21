@@ -1,0 +1,24 @@
+{
+  "name": "autoXGD",
+  "version": "1.0.0",
+  "description": "本地服务读取文件自动填写ace",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/onerou/autoXGD.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/onerou/autoXGD/issues"
+  },
+  "homepage": "https://github.com/onerou/autoXGD#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "puppeteer": "^1.20.0"
+  }
+}
