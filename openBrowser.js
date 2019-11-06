@@ -9,8 +9,8 @@ const initBrowser = async () => {
 		timeout: 0, //timeout here is 无限制
 		args: [ '--disable-bundled-ppapi-flash=true' ],
 		devtools: true,
-		// headless: false
-		headless: true
+		headless: false
+		// headless: true
 	})
 	await loginAce()
 }
@@ -21,7 +21,8 @@ const loginAce = async () => {
 	await loginForm.$eval('#userName', (userInput) => (userInput.value = '007903201011')) // 用户名
 	await loginForm.$eval('#password', (passInput) => (passInput.value = '610404199406170037')) // 密码
 	await loginForm.$eval('#loginBtn', (loginBtn) => loginBtn.click())
-	jumpTo(loginForm)
+	// loginNumber()
+	// jumpTo()
 }
 const jumpTo = async () => {
 	const jumpTo = await browser.newPage()
@@ -71,5 +72,13 @@ const answer = async (val) => {
 	setTimeout(() => {
 		console.log('答题已完成')
 	}, 500)
+}
+const loginNumber = async () => {
+	const jumpTo = await browser.newPage()
+	await jumpTo.goto(`http://online.nwpunec.net/ELearningWebPlatform/Student/CourseList`)
+	// let answerVal = await jumpTo.evaluate((Id) => {
+	// 	document.querySelector('a[href="CourseStudy?courseId=125"]').click()
+	// }, arguments[0])
+	// global.browser.close()
 }
 module.exports = initBrowser
